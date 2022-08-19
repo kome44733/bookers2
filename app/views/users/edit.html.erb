@@ -1,0 +1,17 @@
+<%= render 'layouts/error',model: @user %>
+<div class="container">
+  <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto" >
+    <h2>User info</h2>
+      <%= form_with model: @user do |f| %>
+      <label for="inputName">Name</label></br>
+      <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"Name", class: 'form-control'%>
+  </br>
+      <label for="inputImage">ProfileImage</label></br>
+      <%= f.file_field :profile_image, placeholder: "Image", accept: "image/*" %>  </br>
+      <label for="inputIntroduction">Introduction</label></br>
+      <%= f.text_area :introduction, id:"inputIntroduction", placeholder:"Introduction",  class: 'form-control' %>
+  </br>
+      <%= f.submit "Update User" ,class: 'btn btn-secondary'%>
+      <% end %>
+  </div>
+</div>
